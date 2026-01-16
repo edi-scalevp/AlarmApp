@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		/* Main App Files */
+		A1000001001 /* AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001000 /* AlarmApp.swift */; };
+		A1000002001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000 /* AppDelegate.swift */; };
+
+		/* Models */
+		A1000003001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003000 /* User.swift */; };
+		A1000004001 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004000 /* Alarm.swift */; };
+		A1000005001 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005000 /* Friend.swift */; };
+		A1000006001 /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006000 /* FriendRequest.swift */; };
+
+		/* Services */
+		A1000007001 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007000 /* AuthenticationService.swift */; };
+		A1000008001 /* AlarmKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008000 /* AlarmKitService.swift */; };
+		A1000009001 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009000 /* ContactsService.swift */; };
+		A1000010001 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000 /* FirestoreService.swift */; };
+		A1000011001 /* EscalationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011000 /* EscalationService.swift */; };
+
+		/* Repositories */
+		A1000012001 /* AlarmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012000 /* AlarmRepository.swift */; };
+		A1000013001 /* FriendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000013000 /* FriendRepository.swift */; };
+
+		/* Authentication Views */
+		A1000014001 /* PhoneEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014000 /* PhoneEntryView.swift */; };
+		A1000015001 /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000015000 /* VerificationCodeView.swift */; };
+		A1000016001 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016000 /* ProfileSetupView.swift */; };
+		A1000017001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000017000 /* OnboardingView.swift */; };
+
+		/* Alarm Views */
+		A1000018001 /* AlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018000 /* AlarmListView.swift */; };
+		A1000019001 /* CreateAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000019000 /* CreateAlarmView.swift */; };
+		A1000020001 /* AlarmDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020000 /* AlarmDetailView.swift */; };
+		A1000021001 /* AlarmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000021000 /* AlarmCard.swift */; };
+		A1000022001 /* TimePickerWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022000 /* TimePickerWheel.swift */; };
+
+		/* Friends Views */
+		A1000023001 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000023000 /* FriendsListView.swift */; };
+		A1000024001 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000024000 /* AddFriendView.swift */; };
+		A1000025001 /* FriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000025000 /* FriendRequestsView.swift */; };
+
+		/* Settings Views */
+		A1000026001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000026000 /* SettingsView.swift */; };
+		A1000027001 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027000 /* ProfileView.swift */; };
+
+		/* Widget Extension */
+		A1000028001 /* AlarmActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000028000 /* AlarmActivityAttributes.swift */; };
+		A1000029001 /* AlarmLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000029000 /* AlarmLiveActivity.swift */; };
+
+		/* Frameworks */
+		A1000030001 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000030000 /* WidgetKit.framework */; };
+		A1000031001 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000031000 /* SwiftUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1000040001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1000050001;
+			remoteInfo = AlarmWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1000041001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		/* Main App Files */
+		A1000001000 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
+		A1000002000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1000002500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		/* Models */
+		A1000003000 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A1000004000 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		A1000005000 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		A1000006000 /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+
+		/* Services */
+		A1000007000 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		A1000008000 /* AlarmKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmKitService.swift; sourceTree = "<group>"; };
+		A1000009000 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
+		A1000010000 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		A1000011000 /* EscalationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscalationService.swift; sourceTree = "<group>"; };
+
+		/* Repositories */
+		A1000012000 /* AlarmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRepository.swift; sourceTree = "<group>"; };
+		A1000013000 /* FriendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRepository.swift; sourceTree = "<group>"; };
+
+		/* Authentication Views */
+		A1000014000 /* PhoneEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntryView.swift; sourceTree = "<group>"; };
+		A1000015000 /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
+		A1000016000 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
+		A1000017000 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+
+		/* Alarm Views */
+		A1000018000 /* AlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListView.swift; sourceTree = "<group>"; };
+		A1000019000 /* CreateAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmView.swift; sourceTree = "<group>"; };
+		A1000020000 /* AlarmDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailView.swift; sourceTree = "<group>"; };
+		A1000021000 /* AlarmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCard.swift; sourceTree = "<group>"; };
+		A1000022000 /* TimePickerWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerWheel.swift; sourceTree = "<group>"; };
+
+		/* Friends Views */
+		A1000023000 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		A1000024000 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		A1000025000 /* FriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestsView.swift; sourceTree = "<group>"; };
+
+		/* Settings Views */
+		A1000026000 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1000027000 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+
+		/* Widget Extension */
+		A1000028000 /* AlarmActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmActivityAttributes.swift; sourceTree = "<group>"; };
+		A1000029000 /* AlarmLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmLiveActivity.swift; sourceTree = "<group>"; };
+		A1000029500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		/* Frameworks */
+		A1000030000 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A1000031000 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+
+		/* Products */
+		A1000050000 /* AlarmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000050002 /* AlarmWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlarmWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1000060001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000060002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000030001 /* WidgetKit.framework in Frameworks */,
+				A1000031001 /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1000070000 = {
+			isa = PBXGroup;
+			children = (
+				A1000071000 /* AlarmApp */,
+				A1000072000 /* AlarmWidgetExtension */,
+				A1000073000 /* Frameworks */,
+				A1000074000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1000071000 /* AlarmApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1000001000 /* AlarmApp.swift */,
+				A1000002000 /* AppDelegate.swift */,
+				A1000002500 /* Info.plist */,
+				A1000071001 /* Models */,
+				A1000071002 /* Services */,
+				A1000071003 /* Repositories */,
+				A1000071004 /* Features */,
+			);
+			path = AlarmApp;
+			sourceTree = "<group>";
+		};
+		A1000071001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1000003000 /* User.swift */,
+				A1000004000 /* Alarm.swift */,
+				A1000005000 /* Friend.swift */,
+				A1000006000 /* FriendRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1000071002 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1000007000 /* AuthenticationService.swift */,
+				A1000008000 /* AlarmKitService.swift */,
+				A1000009000 /* ContactsService.swift */,
+				A1000010000 /* FirestoreService.swift */,
+				A1000011000 /* EscalationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A1000071003 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A1000012000 /* AlarmRepository.swift */,
+				A1000013000 /* FriendRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A1000071004 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071005 /* Authentication */,
+				A1000071006 /* Alarms */,
+				A1000071007 /* Friends */,
+				A1000071008 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A1000071005 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071009 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A1000071009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1000014000 /* PhoneEntryView.swift */,
+				A1000015000 /* VerificationCodeView.swift */,
+				A1000016000 /* ProfileSetupView.swift */,
+				A1000017000 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000071006 /* Alarms */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071010 /* Views */,
+			);
+			path = Alarms;
+			sourceTree = "<group>";
+		};
+		A1000071010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1000018000 /* AlarmListView.swift */,
+				A1000019000 /* CreateAlarmView.swift */,
+				A1000020000 /* AlarmDetailView.swift */,
+				A1000071011 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000071011 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1000021000 /* AlarmCard.swift */,
+				A1000022000 /* TimePickerWheel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A1000071007 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071012 /* Views */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		A1000071012 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1000023000 /* FriendsListView.swift */,
+				A1000024000 /* AddFriendView.swift */,
+				A1000025000 /* FriendRequestsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000071008 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071013 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A1000071013 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1000026000 /* SettingsView.swift */,
+				A1000027000 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000072000 /* AlarmWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A1000028000 /* AlarmActivityAttributes.swift */,
+				A1000029000 /* AlarmLiveActivity.swift */,
+				A1000029500 /* Info.plist */,
+			);
+			path = AlarmWidgetExtension;
+			sourceTree = "<group>";
+		};
+		A1000073000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1000030000 /* WidgetKit.framework */,
+				A1000031000 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1000074000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1000050000 /* AlarmApp.app */,
+				A1000050002 /* AlarmWidgetExtensionExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1000050001 /* AlarmApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000080001 /* Build configuration list for PBXNativeTarget "AlarmApp" */;
+			buildPhases = (
+				A1000060001 /* Frameworks */,
+				A1000090001 /* Sources */,
+				A1000041001 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlarmApp;
+			packageProductDependencies = (
+			);
+			productName = AlarmApp;
+			productReference = A1000050000 /* AlarmApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1000050003 /* AlarmWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000080002 /* Build configuration list for PBXNativeTarget "AlarmWidgetExtension" */;
+			buildPhases = (
+				A1000060002 /* Frameworks */,
+				A1000090002 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlarmWidgetExtension;
+			productName = AlarmWidgetExtension;
+			productReference = A1000050002 /* AlarmWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1000050001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A1000050003 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A1000080000 /* Build configuration list for PBXProject "AlarmApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1000070000;
+			packageReferences = (
+			);
+			productRefGroup = A1000074000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1000050001 /* AlarmApp */,
+				A1000050003 /* AlarmWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1000090001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001001 /* AlarmApp.swift in Sources */,
+				A1000002001 /* AppDelegate.swift in Sources */,
+				A1000003001 /* User.swift in Sources */,
+				A1000004001 /* Alarm.swift in Sources */,
+				A1000005001 /* Friend.swift in Sources */,
+				A1000006001 /* FriendRequest.swift in Sources */,
+				A1000007001 /* AuthenticationService.swift in Sources */,
+				A1000008001 /* AlarmKitService.swift in Sources */,
+				A1000009001 /* ContactsService.swift in Sources */,
+				A1000010001 /* FirestoreService.swift in Sources */,
+				A1000011001 /* EscalationService.swift in Sources */,
+				A1000012001 /* AlarmRepository.swift in Sources */,
+				A1000013001 /* FriendRepository.swift in Sources */,
+				A1000014001 /* PhoneEntryView.swift in Sources */,
+				A1000015001 /* VerificationCodeView.swift in Sources */,
+				A1000016001 /* ProfileSetupView.swift in Sources */,
+				A1000017001 /* OnboardingView.swift in Sources */,
+				A1000018001 /* AlarmListView.swift in Sources */,
+				A1000019001 /* CreateAlarmView.swift in Sources */,
+				A1000020001 /* AlarmDetailView.swift in Sources */,
+				A1000021001 /* AlarmCard.swift in Sources */,
+				A1000022001 /* TimePickerWheel.swift in Sources */,
+				A1000023001 /* FriendsListView.swift in Sources */,
+				A1000024001 /* AddFriendView.swift in Sources */,
+				A1000025001 /* FriendRequestsView.swift in Sources */,
+				A1000026001 /* SettingsView.swift in Sources */,
+				A1000027001 /* ProfileView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000090002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000028001 /* AlarmActivityAttributes.swift in Sources */,
+				A1000029001 /* AlarmLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1000100001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1000100002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1000100003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlarmApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WakeUp;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wakeup.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A1000100004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlarmApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WakeUp;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wakeup.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A1000100005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlarmWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Alarm Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wakeup.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A1000100006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlarmWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Alarm Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wakeup.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1000080000 /* Build configuration list for PBXProject "AlarmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000100001 /* Debug */,
+				A1000100002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000080001 /* Build configuration list for PBXNativeTarget "AlarmApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000100003 /* Debug */,
+				A1000100004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000080002 /* Build configuration list for PBXNativeTarget "AlarmWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000100005 /* Debug */,
+				A1000100006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1000000000 /* Project object */;
+}
