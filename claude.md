@@ -1,5 +1,49 @@
 # WakeUp - Social Accountability Alarm App
 
+## Current Status
+
+**GitHub**: https://github.com/edi-scalevp/AlarmApp
+
+### What's Done
+- [x] All Swift source code (37 files, 8,300+ lines)
+- [x] Xcode project file with main app + widget extension targets
+- [x] Firebase Cloud Functions (TypeScript)
+- [x] Project documentation
+- [x] Setup instructions and test plan
+- [x] Pushed to GitHub
+
+### What's Next (Manual Steps Required)
+See `SETUP_AND_TEST_PLAN.md` for detailed instructions. Summary:
+
+1. **Create Firebase Project** - console.firebase.google.com
+2. **Enable Phone Auth** - Firebase → Authentication → Phone
+3. **Create Firestore DB** - Firebase → Firestore → Create database
+4. **Download GoogleService-Info.plist** - Add iOS app in Firebase
+5. **Create APNs Key** - Apple Developer → Keys → APNs
+6. **Upload APNs to Firebase** - Firebase → Cloud Messaging
+7. **Open Xcode** - `open AlarmApp.xcodeproj`
+8. **Add GoogleService-Info.plist** - Drag into AlarmApp folder
+9. **Add Firebase SDK** - File → Add Package Dependencies → firebase-ios-sdk
+10. **Configure Signing** - Select team, fix bundle ID if needed
+11. **Add Capabilities** - Push Notifications, Background Modes
+12. **Deploy Cloud Functions** - `cd functions && npm install && firebase deploy`
+13. **Add Firestore Rules** - Copy from SETUP_AND_TEST_PLAN.md
+14. **Run on Device** - Connect iPhone, build & run
+
+### Quick Commands
+```bash
+# Open project
+open /Users/edi/Projects/AlarmApp/AlarmApp.xcodeproj
+
+# View setup guide
+open /Users/edi/Projects/AlarmApp/SETUP_AND_TEST_PLAN.md
+
+# Deploy cloud functions
+cd /Users/edi/Projects/AlarmApp/functions && npm install && firebase deploy --only functions
+```
+
+---
+
 ## Project Overview
 
 A bulletproof iPhone alarm app with social accountability. If you don't dismiss your alarm in time, your friend gets notified to help wake you up.
@@ -28,63 +72,41 @@ A bulletproof iPhone alarm app with social accountability. If you don't dismiss 
 
 ```
 AlarmApp/
+├── AlarmApp.xcodeproj/            # Xcode project
 ├── AlarmApp/
-│   ├── AlarmApp.swift              # App entry point, SwiftData setup
-│   ├── AppDelegate.swift           # Firebase & push notification config
+│   ├── AlarmApp.swift             # App entry point, SwiftData setup
+│   ├── AppDelegate.swift          # Firebase & push notification config
 │   ├── Info.plist
-│   │
 │   ├── Models/
-│   │   ├── User.swift              # User profile with phone auth
-│   │   ├── Alarm.swift             # Alarm with escalation settings
-│   │   ├── Friend.swift            # Friend relationship
-│   │   └── FriendRequest.swift     # Friend request flow
-│   │
+│   │   ├── User.swift             # User profile with phone auth
+│   │   ├── Alarm.swift            # Alarm with escalation settings
+│   │   ├── Friend.swift           # Friend relationship
+│   │   └── FriendRequest.swift    # Friend request flow
 │   ├── Services/
 │   │   ├── AuthenticationService.swift   # Firebase Phone Auth
 │   │   ├── AlarmKitService.swift         # AlarmKit + Live Activities
 │   │   ├── ContactsService.swift         # Contact access & hashing
 │   │   ├── FirestoreService.swift        # Database operations
 │   │   └── EscalationService.swift       # Friend notification logic
-│   │
 │   ├── Repositories/
-│   │   ├── AlarmRepository.swift   # Alarm CRUD + scheduling
-│   │   └── FriendRepository.swift  # Friends & contact discovery
-│   │
+│   │   ├── AlarmRepository.swift  # Alarm CRUD + scheduling
+│   │   └── FriendRepository.swift # Friends & contact discovery
 │   └── Features/
-│       ├── Authentication/Views/
-│       │   ├── PhoneEntryView.swift
-│       │   ├── VerificationCodeView.swift
-│       │   ├── ProfileSetupView.swift
-│       │   └── OnboardingView.swift
-│       │
-│       ├── Alarms/Views/
-│       │   ├── AlarmListView.swift
-│       │   ├── CreateAlarmView.swift
-│       │   ├── AlarmDetailView.swift
-│       │   └── Components/
-│       │       ├── AlarmCard.swift
-│       │       └── TimePickerWheel.swift
-│       │
-│       ├── Friends/Views/
-│       │   ├── FriendsListView.swift
-│       │   ├── AddFriendView.swift
-│       │   └── FriendRequestsView.swift
-│       │
-│       └── Settings/Views/
-│           ├── SettingsView.swift
-│           └── ProfileView.swift
-│
+│       ├── Authentication/Views/  # Phone entry, SMS code, onboarding, profile
+│       ├── Alarms/Views/          # Alarm list, create, edit, components
+│       ├── Friends/Views/         # Friends list, add friend, requests
+│       └── Settings/Views/        # Settings, profile editing
 ├── AlarmWidgetExtension/
 │   ├── AlarmActivityAttributes.swift    # Live Activity data model
 │   ├── AlarmLiveActivity.swift          # Lock Screen & Dynamic Island UI
 │   └── Info.plist
-│
-├── functions/                           # Firebase Cloud Functions
-│   ├── src/index.ts                     # All cloud functions
+├── functions/                     # Firebase Cloud Functions
+│   ├── src/index.ts               # All cloud functions
 │   ├── package.json
 │   └── tsconfig.json
-│
-└── Package.swift                        # SPM dependencies
+├── SETUP_AND_TEST_PLAN.md         # Detailed setup + 25 test cases
+├── README.md                      # GitHub readme
+└── claude.md                      # This file
 ```
 
 ## Core Flows
@@ -120,44 +142,36 @@ Alarm fires → Live Activity shows on Lock Screen →
 5. Matched contacts shown with "Add" button
 6. Non-registered contacts can be invited
 
-## Firebase Setup Required
+## Cloud Functions
 
-### 1. Create Firebase Project
-- Go to [Firebase Console](https://console.firebase.google.com)
-- Create new project "WakeUp"
-- Enable Phone Authentication
-- Create Firestore database
-- Enable Cloud Messaging
+Located in `functions/src/index.ts`:
 
-### 2. iOS App Configuration
-- Add iOS app with bundle ID
-- Download `GoogleService-Info.plist`
-- Place in `AlarmApp/` directory
+| Function | Trigger | Purpose |
+|----------|---------|---------|
+| `findFriendsFromContacts` | HTTPS callable | Match phone hashes to registered users |
+| `onAlarmTriggered` | HTTPS callable | Create escalation event when alarm fires |
+| `onAlarmDismissed` | HTTPS callable | Cancel escalation when user dismisses |
+| `onAlarmSnoozed` | HTTPS callable | Extend escalation deadline |
+| `processEscalations` | Scheduled (1 min) | Send push to friends for pending escalations |
+| `onFriendRequestCreated` | Firestore trigger | Send push for new friend requests |
+| `onFriendRequestAccepted` | Firestore trigger | Send push when request accepted |
+| `getWakeUpStats` | HTTPS callable | Get user's alarm statistics |
+| `getEscalationHistory` | HTTPS callable | Get past escalation events |
+| `canNotifyFriend` | HTTPS callable | Check rate limits before notifying |
+| `onUserDeleted` | Auth trigger | Clean up user data on account deletion |
 
-### 3. Deploy Cloud Functions
-```bash
-cd functions
-npm install
-firebase login
-firebase deploy --only functions
-```
+## Firestore Security Rules
 
-### 4. Firestore Security Rules
 ```javascript
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Users can read/write their own document
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
-
-      // Friends subcollection
       match /friends/{friendId} {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }
     }
-
-    // Friend requests
     match /friendRequests/{requestId} {
       allow read: if request.auth != null &&
         (resource.data.fromUserId == request.auth.uid ||
@@ -167,8 +181,6 @@ service cloud.firestore {
       allow update: if request.auth != null &&
         resource.data.toUserId == request.auth.uid;
     }
-
-    // Escalations (read own, cloud functions write)
     match /escalations/{eventId} {
       allow read: if request.auth != null &&
         resource.data.userId == request.auth.uid;
@@ -176,29 +188,6 @@ service cloud.firestore {
   }
 }
 ```
-
-## Xcode Project Setup
-
-### Required Capabilities
-- Push Notifications
-- Background Modes (Remote notifications, Background fetch)
-- App Groups (for widget extension)
-
-### Required Entitlements
-- `com.apple.developer.usernotifications.critical-alerts` (for alarm sounds)
-
-### SPM Dependencies
-```swift
-// In Xcode: File > Add Package Dependencies
-// URL: https://github.com/firebase/firebase-ios-sdk.git
-// Products: FirebaseAuth, FirebaseFirestore, FirebaseMessaging, FirebaseFunctions
-```
-
-### Widget Extension Target
-1. File > New > Target > Widget Extension
-2. Name: "AlarmWidgetExtension"
-3. Include Live Activity: Yes
-4. Add files from `AlarmWidgetExtension/` folder
 
 ## Key Implementation Notes
 
@@ -221,18 +210,16 @@ service cloud.firestore {
 - Max 3 notifications per friend per hour
 - Prevents abuse of the escalation feature
 
-## Testing Checklist
+## Testing
 
-- [ ] Phone auth: sign up, sign out, sign in
-- [ ] Alarm: create, edit, delete, toggle
-- [ ] Alarm fires in Silent Mode (requires AlarmKit on iOS 26)
-- [ ] Live Activity shows on Lock Screen
-- [ ] Snooze extends escalation timer
-- [ ] Dismiss cancels escalation
-- [ ] Friend request: send, accept, decline
-- [ ] Contact discovery finds registered users
-- [ ] Escalation triggers friend push notification
-- [ ] Stats update after alarms
+Full test plan in `SETUP_AND_TEST_PLAN.md` with 25+ test cases covering:
+- Authentication (phone, SMS, onboarding, profile)
+- Alarm management (create, list, edit, delete)
+- Alarm firing (basic, snooze, silent mode)
+- Friends system (list, permissions, add, invite)
+- Social accountability/escalation
+- Settings
+- Edge cases (no network, app killed, phone restart)
 
 ## Common Issues
 
@@ -251,6 +238,11 @@ service cloud.firestore {
 1. Check NSSupportsLiveActivities in Info.plist
 2. Verify widget extension is properly configured
 3. Check ActivityAuthorizationInfo().areActivitiesEnabled
+
+### "No such module 'FirebaseAuth'"
+- Xcode → File → Packages → Reset Package Caches
+- Clean build: Cmd+Shift+K
+- Build again: Cmd+B
 
 ## Architecture Decisions
 
